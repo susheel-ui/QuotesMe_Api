@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Document(collection = "users")
 public class User {
@@ -20,7 +21,7 @@ public class User {
     private String password;
     @DBRef
     private ArrayList<Quotes> userQuotes = new ArrayList<>();
-    private ArrayList<String> roles = new ArrayList<>();
+    private List<String> roles = new ArrayList<>();
 
     public User() {
     }
@@ -66,11 +67,11 @@ public class User {
         this.id = id;
     }
 
-    public ArrayList<String> getRoles() {
+    public List<String> getRoles() {
         return roles;
     }
 
-    public void setRoles(ArrayList<String> roles) {
+    public void setRoles(List<String> roles) {
         this.roles = roles;
     }
 }

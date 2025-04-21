@@ -11,6 +11,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 @Component
 public class UserService {
     @Autowired
@@ -24,6 +27,7 @@ public class UserService {
         ){
             if(repo.findByUsername(usr.getUsername()) == null){
                 usr.setPassword(passwordEncoder.encode(usr.getPassword()));
+                usr.setRoles(Arrays.asList("USER"));
                 User save = repo.save(usr);
                 return new ResponseEntity<>(save,HttpStatus.OK);
             }

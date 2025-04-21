@@ -1,16 +1,10 @@
 package com.example.QuotesMe.Controllers;
-
 import com.example.QuotesMe.Entities.User;
-import com.example.QuotesMe.Repository.UserRepo;
 import com.example.QuotesMe.Services.QuotesService;
 import com.example.QuotesMe.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
