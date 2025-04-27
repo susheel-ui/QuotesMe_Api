@@ -1,22 +1,21 @@
-spring:
-  application:
-    name:QuotesMeAPI
-  data:
-    mongodb:
-      uri:mongodb+srv://QuoteApp:12345@springbootcluster.0x4ths4.mongodb.net/?retryWrites=true&w=majority&appName=SpringBootCluster
-      database:quotes_db
-      auto-index-creation:true
-server:
-    port: 9090
-    servlet:
-      context-path: /Quotes
-
-
-
-#insteed of it do make a yml file of YAML
-
 #spring.application.name=QuotesMeAPI
 #spring.data.mongodb.uri = mongodb+srv://QuoteApp:12345@springbootcluster.0x4ths4.mongodb.net/?retryWrites=true&w=majority&appName=SpringBootCluster
 #Spring.data.mongodb.database = quotes_db
 #spring.data.mongodb.auto.index.creation = true
-#
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://QuoteApp:12345@springbootcluster.0x4ths4.mongodb.net/?retryWrites=true&w=majority&appName=SpringBootCluster
+      database: quotes_db
+      auto:
+        index:
+          creation: true
+server:
+  port: 8080
+
+#logging:
+#  level:
+#    com:
+#      example:
+#        QuotesMe: INFO
+

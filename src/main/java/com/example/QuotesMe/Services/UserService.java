@@ -1,21 +1,35 @@
 package com.example.QuotesMe.Services;
 
+import com.example.QuotesMe.Entities.Quotes;
 import com.example.QuotesMe.Entities.User;
+import com.example.QuotesMe.Repository.QuotesRepo;
 import com.example.QuotesMe.Repository.UserRepo;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpLogging;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import lombok.extern.slf4j.Slf4j;
+
+import static java.rmi.server.LogStream.log;
 
 @Component
+@Slf4j
 public class UserService {
+    private static final Logger log = LoggerFactory.getLogger(UserService.class);
     @Autowired
     private UserRepo repo;
+    @Autowired
+    private QuotesRepo quotesRepo;
     private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     @Transactional // made it Transaction Service
     public ResponseEntity<?> SignUpUser(User usr){
@@ -27,6 +41,8 @@ public class UserService {
                 usr.setPassword(passwordEncoder.encode(usr.getPassword()));
                 usr.setRoles(Arrays.asList("USER"));
                 User save = repo.save(usr);
+               log.info("userCreated {}",save.getUsername());
+
                 return new ResponseEntity<>(save,HttpStatus.OK);
             }
             return new ResponseEntity<>(HttpStatus.CONFLICT);
@@ -56,12 +72,18 @@ public class UserService {
         return repo.findByUsername(userName);
     }
     public ResponseEntity<?> DeleteUser(String username){
+
         User byUsername = repo.findByUsername(username);
-        if(byUsername!= null){
-            repo.delete(byUsername);
-            return new ResponseEntity<>(HttpStatus.OK);
+        ArrayList<Quotes> userQuotes =byUsername.getUserQuotes();
+        repo.delete(byUsername);
+        try{
+            for (Quotes x :userQuotes){
+                quotesRepo.delete(x);
+            }
+        }catch (Exception e){
+            log.error("user deleted but not deleted "+e.getMessage());
         }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

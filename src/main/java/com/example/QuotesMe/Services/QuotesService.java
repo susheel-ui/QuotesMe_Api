@@ -5,6 +5,8 @@ import com.example.QuotesMe.Entities.User;
 import com.example.QuotesMe.Repository.QuotesRepo;
 import com.example.QuotesMe.Repository.UserRepo;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +14,15 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 @Component
+@Slf4j
 public class QuotesService {
+    private static final Logger log = LoggerFactory.getLogger(QuotesService.class);
     @Autowired
     private QuotesRepo qouteRepo;
     @Autowired
@@ -30,17 +35,17 @@ public class QuotesService {
 
     @Transactional
     public ResponseEntity<?> SaveQuote(String id, Quotes quotes) {
+            User usrResById = usrRepo.findById(new ObjectId(id)).orElse(null);
+            if (usrResById != null) {
+                quotes.setAuthor(usrResById.getUsername());
+                quotes.setDate(LocalDateTime.now().toString());
+                Quotes result = qouteRepo.save(quotes);
+                usrResById.getUserQuotes().add(result);
+                usrRepo.save(usrResById);
+                return new ResponseEntity<>(result, HttpStatus.OK);
+            }
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        User usrResById = usrRepo.findById(new ObjectId(id)).orElse(null);
-        if (usrResById != null) {
-            quotes.setAuthor(usrResById.getUsername());
-            quotes.setDate(LocalDateTime.now().toString());
-            Quotes result = qouteRepo.save(quotes);
-            usrResById.getUserQuotes().add(result);
-            usrRepo.save(usrResById);
-            return new ResponseEntity<>(result, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     public ArrayList<Quotes> getAllQuotes() {
