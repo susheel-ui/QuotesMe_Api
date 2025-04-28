@@ -4,6 +4,7 @@ import com.example.QuotesMe.Entities.Quotes;
 import com.example.QuotesMe.Entities.User;
 import com.example.QuotesMe.Repository.QuotesRepo;
 import com.example.QuotesMe.Repository.UserRepo;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,21 +39,27 @@ public class UserService {
             usr.getPassword() != null && !usr.getPassword().isEmpty()
         ){
             if(repo.findByUsername(usr.getUsername()) == null){
-                usr.setPassword(passwordEncoder.encode(usr.getPassword()));
+                    usr.setPassword(passwordEncoder.encode(usr.getPassword()));
                 usr.setRoles(Arrays.asList("USER"));
                 User save = repo.save(usr);
-               log.info("userCreated {}",save.getUsername());
+               log.info("userCreated user {},password {}",save.getUsername(),save.getPassword());
 
                 return new ResponseEntity<>(save,HttpStatus.OK);
             }
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
+
         return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }catch (Exception e){
             return new ResponseEntity<>("Exception "+e.getMessage(),HttpStatus.BAD_REQUEST);
         }
     }//SingUp
+
+    public ResponseEntity<?> UpdateUser(User user){
+        return new ResponseEntity<>(repo.save(user),HttpStatus.OK);
+    }
+
 
     public ResponseEntity<?> logInUser(String usrName,String pwd){
         User usr = repo.findByUsername(usrName);
@@ -72,7 +79,6 @@ public class UserService {
         return repo.findByUsername(userName);
     }
     public ResponseEntity<?> DeleteUser(String username){
-
         User byUsername = repo.findByUsername(username);
         ArrayList<Quotes> userQuotes =byUsername.getUserQuotes();
         repo.delete(byUsername);
