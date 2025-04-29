@@ -72,3 +72,24 @@
 2025-04-28-21 74861 [http-nio-8080-exec-4] INFO  c.e.Q.Controllers.UserController -- already user password $2a$10$Bf4GkQOdYlSSxhwIugs6suZOPsCWtYP28bzpW7ooU1asWFpzhVLKO
 2025-04-28-21 75143 [http-nio-8080-exec-4] INFO  c.e.QuotesMe.Services.UserService -- userCreated user subhi,password $2a$10$uYLmxydDj7fjj6WjyB841.Mvjp37VapAQ7WHwGXInX/YkHhEf8a.u
 2025-04-28-21 75143 [http-nio-8080-exec-4] INFO  c.e.Q.Controllers.UserController -- user Updated username :  subhi , password : $2a$10$uYLmxydDj7fjj6WjyB841.Mvjp37VapAQ7WHwGXInX/YkHhEf8a.u
+2025-04-28-21 723  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Starting QuotesMeApiApplication using Java 24.0.1 with PID 25820 (D:\GithubRepo\QuotesMe_Api\target\classes started by sushe in D:\GithubRepo\QuotesMe_Api)
+2025-04-28-21 726  [main] DEBUG c.e.QuotesMe.QuotesMeApiApplication -- Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-28-21 727  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- No active profile set, falling back to 1 default profile: "default"
+2025-04-28-21 3754 [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Started QuotesMeApiApplication in 3.431 seconds (process running for 3.94)
+2025-04-28-21 59285 [http-nio-8080-exec-2] INFO  c.e.QuotesMe.Services.UserService -- userCreated user ankit,password $2a$10$UxrM0EhMFlgNxDkwDDyfE.lFDHRsad/o2fq0Jo4vb9UW/8S2pb4sK
+2025-04-28-21 94037 [http-nio-8080-exec-5] INFO  c.e.Q.Controllers.UserController -- password not given
+2025-04-28-21 94037 [http-nio-8080-exec-5] INFO  c.e.Q.Controllers.UserController -- password entered null
+2025-04-28-21 94037 [http-nio-8080-exec-5] INFO  c.e.Q.Controllers.UserController -- already user password $2a$10$UxrM0EhMFlgNxDkwDDyfE.lFDHRsad/o2fq0Jo4vb9UW/8S2pb4sK
+2025-04-28-21 94110 [http-nio-8080-exec-5] INFO  c.e.Q.Controllers.UserController -- user Updated username :  ankita , password : $2a$10$UxrM0EhMFlgNxDkwDDyfE.lFDHRsad/o2fq0Jo4vb9UW/8S2pb4sK
+2025-04-28-22 759  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Starting QuotesMeApiApplication using Java 24.0.1 with PID 7556 (D:\GithubRepo\QuotesMe_Api\target\classes started by sushe in D:\GithubRepo\QuotesMe_Api)
+2025-04-28-22 762  [main] DEBUG c.e.QuotesMe.QuotesMeApiApplication -- Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-28-22 762  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- No active profile set, falling back to 1 default profile: "default"
+2025-04-28-22 3818 [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Started QuotesMeApiApplication in 3.484 seconds (process running for 4.019)
+2025-04-28-22 730  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Starting QuotesMeApiApplication using Java 24.0.1 with PID 24008 (D:\GithubRepo\QuotesMe_Api\target\classes started by sushe in D:\GithubRepo\QuotesMe_Api)
+2025-04-28-22 733  [main] DEBUG c.e.QuotesMe.QuotesMeApiApplication -- Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-28-22 734  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- No active profile set, falling back to 1 default profile: "default"
+2025-04-28-22 3754 [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Started QuotesMeApiApplication in 3.427 seconds (process running for 3.946)
+2025-04-28-22 725  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Starting QuotesMeApiApplication using Java 24.0.1 with PID 22268 (D:\GithubRepo\QuotesMe_Api\target\classes started by sushe in D:\GithubRepo\QuotesMe_Api)
+2025-04-28-22 727  [main] DEBUG c.e.QuotesMe.QuotesMeApiApplication -- Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-28-22 728  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- No active profile set, falling back to 1 default profile: "default"
+2025-04-28-22 3783 [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Started QuotesMeApiApplication in 3.457 seconds (process running for 3.972)

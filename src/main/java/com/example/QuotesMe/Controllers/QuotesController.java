@@ -47,15 +47,33 @@ public class QuotesController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?>  UpdateQuote(@PathVariable ObjectId id, @RequestBody Quotes newQuotes){
+    public ResponseEntity<?>  UpdateQuote(@PathVariable String id, @RequestBody Quotes newQuotes){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-           return qService.QuoteUpdateQuote(id,newQuotes);
+           return qService.QuoteUpdateQuote(new ObjectId(id),newQuotes);
+
   }
     @DeleteMapping
     public ResponseEntity<?> DeleteQuote(@RequestParam String id){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-       return qService.DeleteQuotes(id);
+        User user = userService.findByUserName(authentication.getName());
+//        boolean flag = CheckQuoteExistence(user,new ObjectId(id));
+//        if(flag)
+            return qService.DeleteQuotes(id);
+//        return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+
     }
+
+//    private boolean CheckQuoteExistence(User user,ObjectId id){
+//        boolean flag = false;
+//        for (Quotes x :user.getUserQuotes()){
+//            if (id == x.getId()) {
+//                flag = true;
+//                break;
+//            }
+//        }
+//        return flag;
+//    }
+
 
 
 }
