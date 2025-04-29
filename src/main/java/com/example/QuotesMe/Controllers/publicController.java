@@ -20,7 +20,7 @@ public class publicController {
     }
     @GetMapping
     public ResponseEntity<?> healthCheck(){
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>("Working.....",HttpStatus.OK);
         // it`s use for check the server checking
     }
     @GetMapping("/get-all-quotes")

@@ -31,6 +31,7 @@ public class springSecurity{
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/quotes/**").authenticated()
                         .requestMatchers("/public/**").permitAll()
+                        .requestMatchers("/QuoteMe/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())
