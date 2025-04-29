@@ -7,7 +7,7 @@
 spring:
   data:
     mongodb:
-      uri: Mongodb//mongodb+srv://QuoteApp:12345@springbootcluster.0x4ths4.mongodb.net/?retryWrites=true&w=majority&appName=SpringBootCluster
+      uri: ${MONGO_db_URL}
       database: quotes_db
       auto:
         index:
