@@ -13,7 +13,7 @@ spring:
         index:
           creation: true
 server:
-  port: ${Port:8080}
+  port: ${Port}
 
 #logging:
 #  level:
