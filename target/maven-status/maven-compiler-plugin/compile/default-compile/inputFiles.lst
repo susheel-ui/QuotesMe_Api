@@ -1,0 +1,13 @@
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\config\springSecurity.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Controllers\publicController.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Controllers\QuotesController.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Controllers\rootController.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Controllers\UserController.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Entities\Quotes.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Entities\User.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\QuotesMeApiApplication.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Repository\QuotesRepo.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Repository\UserRepo.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Services\QuotesService.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Services\UserDetailsServiceImpl.java
+D:\GithubRepo\QuotesMe_Api\src\main\java\com\example\QuotesMe\Services\UserService.java

@@ -1,0 +1,13 @@
+com\example\QuotesMe\Services\UserDetailsServiceImpl.class
+com\example\QuotesMe\Services\UserService.class
+com\example\QuotesMe\Controllers\UserController.class
+com\example\QuotesMe\Repository\UserRepo.class
+com\example\QuotesMe\Controllers\rootController.class
+com\example\QuotesMe\Entities\Quotes.class
+com\example\QuotesMe\Entities\User.class
+com\example\QuotesMe\Controllers\QuotesController.class
+com\example\QuotesMe\Controllers\publicController.class
+com\example\QuotesMe\QuotesMeApiApplication.class
+com\example\QuotesMe\Services\QuotesService.class
+com\example\QuotesMe\config\springSecurity.class
+com\example\QuotesMe\Repository\QuotesRepo.class
