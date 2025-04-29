@@ -115,3 +115,11 @@
 2025-04-29-11 748  [main] DEBUG c.e.QuotesMe.QuotesMeApiApplication -- Running with Spring Boot v3.3.10, Spring v6.1.18
 2025-04-29-11 749  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- No active profile set, falling back to 1 default profile: "default"
 2025-04-29-11 3944 [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Started QuotesMeApiApplication in 3.605 seconds (process running for 4.159)
+2025-04-29-11 798  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Starting QuotesMeApiApplication using Java 24.0.1 with PID 23100 (D:\GithubRepo\QuotesMe_Api\target\classes started by sushe in D:\GithubRepo\QuotesMe_Api)
+2025-04-29-11 801  [main] DEBUG c.e.QuotesMe.QuotesMeApiApplication -- Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-29-11 802  [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- No active profile set, falling back to 1 default profile: "default"
+2025-04-29-11 3892 [main] INFO  c.e.QuotesMe.QuotesMeApiApplication -- Started QuotesMeApiApplication in 3.531 seconds (process running for 4.084)
+2025-04-29-11 47159 [http-nio-8080-exec-2] INFO  c.e.QuotesMe.Services.UserService -- userCreated user anjul,password $2a$10$3PPSqsIGeGf8v7DfWx9nZ.jafnXXNtcGItdM2upjhrN1zl6Id0POG
+2025-04-29-12 762  [main] INFO  c.e.Q.QuotesMeApiApplicationTests -- Starting QuotesMeApiApplicationTests using Java 17.0.12 with PID 6284 (started by sushe in D:\GithubRepo\QuotesMe_Api)
+2025-04-29-12 763  [main] DEBUG c.e.Q.QuotesMeApiApplicationTests -- Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-29-12 764  [main] INFO  c.e.Q.QuotesMeApiApplicationTests -- No active profile set, falling back to 1 default profile: "default"

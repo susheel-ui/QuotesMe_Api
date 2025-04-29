@@ -15,8 +15,8 @@ spring:
 server:
   port: ${Port}
 
-#logging:
-#  level:
-#    com:
-#      example:
-#        QuotesMe: INFO
+logging:
+  level:
+    com:
+      example:
+        QuotesMe: INFO
