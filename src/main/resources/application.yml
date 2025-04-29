@@ -7,13 +7,13 @@
 spring:
   data:
     mongodb:
-      uri: ${mongodb_URL}
+      uri: Mongodb//mongodb+srv://QuoteApp:12345@springbootcluster.0x4ths4.mongodb.net/?retryWrites=true&w=majority&appName=SpringBootCluster
       database: quotes_db
       auto:
         index:
           creation: true
 server:
-  port: ${Port}
+  port: 8080
 
 #logging:
 #  level:
